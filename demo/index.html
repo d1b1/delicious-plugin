@@ -1,0 +1,51 @@
+<html>
+<head>
+<script type="text/javascript" src="lib/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="delicious.jquery.js"></script>
+
+<style>
+body { font-family: arial; 	}
+#reading { width: 600px; 
+           padding: 10px;
+           border:1px solid #000; 
+           background-color: #EFEFEF;
+           line-height: 30px;	
+           margin: 20px;
+         }
+
+</style>
+</head>
+<body>
+
+This is demo script that will build an unordered list of links using a users delicious feed and one or more tags. The standard feed URL allows for more then one tag, but will only show links that have all the tags. This code query each tag and only out put a link once. Since the AJAX calls are asynchronous, the json calls can come back in different order. 
+<br>
+<br>
+This code was written to give my blog a dynamic element. I add tags into the Jekyll front matter. When the code renders on the client (in the browser), this code will fetch an links using those same tags from Delicious. I am lazy, so as I tag links, they will find they way into the existing Blog posts. I am way to slow to actually ready own blog and update the links :).
+<br>
+<br>
+<br>
+Test runs with a feed from my delicious account, and tags 'couchdb nosql'.
+<br>
+
+<script src="https://gist.github.com/1721433.js"> </script>
+
+<div id="reading" >
+Here are all the My Delicious Links for the tags 'couchdb nosql'.<br>
+</div>
+
+<script>
+var settings = { username: 'stephansmith93', 
+                 target: '#reading',
+                 separator: ' '
+               };
+               
+get_delicious_json( 'couchdb nosql', settings);
+</script>
+
+Enjoy. This might get rolled into a plugin. One note, since this will be used as a client side render of Delicious links, google will not index, so if you want to get SEO points for the links, you might want to move the render to the server side, which will rule out using Jekyll on Github. 
+
+<br>
+<br>
+See the code in situ on <a href="http://d1b1.github.com/2012/01/19/Getting-up-to-speed-with-CouchApps.html#Delicious">Solutions for Standalone CouchApp Development</a>
+</body>
+</html>
