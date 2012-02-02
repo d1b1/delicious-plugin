@@ -1,4 +1,9 @@
-# Delicious Tags 
+# Delicious Tag Query + Render
+
+* Client Side JQuery.
+* Uses the Delicious Feeds and Restful API.
+* Processes Json for multiple tags.
+* Great for Jekyll + git blogs.
 
 ## What?
 This is demo script that will build an unordered list of links using a users delicious feed and one or more tags. The standard feed URL allows for more then one tag, but will only show links that have all the tags. This code query each tag and only out put a link once. Since the AJAX calls are asynchronous, the json calls can come back in different order. 
